@@ -1,0 +1,100 @@
+---
+import { DoctorsTab } from "@/components/DoctorsTab/DoctorsTab";
+import DCard from "../../components/DCard/DCard.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+
+const doctors = [
+	{id: 1, slug:'daria-evstafieva', name: 'Евстафьева Дарья Алексеевна', type: 'Главный врач, врач-психиатр, детский психиатр', img: '/img/team/evstafieva/Daria_Evstafieva.jpg'},
+	{id: 2, slug:'zhanna-aleshina', name: 'Алёшина Жанна Александровна', type: 'Врач-психиатр', img: '/img/team/aleshina/aleshina_1.jpg'},
+  {id:9, slug: 'elvira-yurova', name: 'Юрова Эльвира Гошгаровна', type: 'Врач-психиатр', img: '/img/team/yurova/yurova.jpg'},
+	{id: 3, slug:'ekaterina-kovaleva', name: 'Ковалева Екатерина Сергеевна', type: 'Терапевт, нутрициолог', img: '/img/team/kovaleva/kovaleva.jpg'},
+  {id: 5, slug:'irina-leonova', name: 'Леонова Ирина Алексеевна', type: 'Психолог', img: '/img/team/leonova/leonova.jpg'},
+  {id: 6, slug:'yana-zamyatina', name: 'Замятина Яна Владиславовна', type: 'Клинический психолог', img: '/img/team/zamyatina/zamyatina.jpg'},
+  {id: 7, slug:'olga-tutaeva', name: 'Тутаева Ольга Владимировна', type: 'Клинический психолог', img: '/img/team/tutaeva/tutaeva.jpg'},
+  {id: 8, slug:'alena-burlachenko', name: 'Бурлаченко Алёна Алексеевна', type: 'Клинический психолог', img: '/img/team/burlachenko/burlachenko.jpg'},
+  {id: 10, slug:'tatiana-abih', name: 'Абих Татьяна Юрьевна', type: 'Клинический психолог', img: '/img/team/abih/abih.jpg'},
+]
+
+---
+
+
+
+<MainLayout title="Специалисты Центра Современной Психотерапии и Соматической Патологии" description="Специалисты Центра Современной Психотерапии и Соматической Патологии">
+  <section class="doctors">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="breadcrumbs">
+            <ul>
+              <li><a href="/">Главная</a></li>
+              <li><a href="/doctors" class="active">Специалисты</a></li>
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="title">
+            <h1>Специалисты нашего центра</h1>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="doctors_main_img">
+            <img src="/img/team/csp_team.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="description">
+            <p>Мы объединили специалистов, которые работают по различным направлениям терапии, используют в своей работе самые современные методы психологической помощи, для решения задачи пациента.</p>
+            <DoctorsTab client:load/>
+          </div>
+          
+        </div>
+
+        {doctors.map(doctor => 
+          <DCard name={doctor.name} type={doctor.type} imgSrc={doctor.img} id={doctor.id} slug={doctor.slug}/>
+        )}
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .doctors {
+    margin-top: 94px;
+  }
+
+  .doctors_main_img {
+    padding: 10px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: -6px -6px 8px rgba(255, 255, 255, 0.9), 5px 5px 8px rgba(0, 0, 0, 0.07);
+    margin-bottom: 25px;
+  }
+
+  .doctors_main_img img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+
+  .tab_content {}
+
+  .tab_content p{}
+
+  .tab_content ul li{}
+
+  .description {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: -6px -6px 8px rgba(255, 255, 255, 0.9), 5px 5px 8px rgba(0, 0, 0, 0.07);
+    padding: 25px;
+    margin-bottom: 30px;
+  }
+
+  .description p{
+    font-size: 18px;
+    line-height: 22px;
+  }
+</style>

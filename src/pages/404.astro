@@ -1,0 +1,62 @@
+---
+import ErrorLoader from "../components/ErrorLoader/ErrorLoader.astro";
+import EmptyLayout from "../layouts/EmptyLayout.astro";
+
+---
+
+
+
+<EmptyLayout>
+  <section class="error">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="error_wrapper">
+            <ErrorLoader/>
+            <h1>Страница не найдена!</h1>
+            <button class="error_btn">
+              <a href="/">На главную</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</EmptyLayout>
+
+<style>
+  .error {
+    margin-top: 100px;
+    
+  }
+  .error_wrapper {
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: calc(100vh - 100px);
+  }
+  .error_wrapper  .error_btn {
+  padding: 8px 16px;
+    border: 1px solid #654b7a;
+    background-color: transparent;
+    transition: 0.3s all;
+    border-radius: 9px;
+    margin: 10px 0px;
+}
+.error_wrapper  .error_btn  a{
+  font-size: 16px;
+    color: #654b7a;
+    text-decoration: none;
+}
+
+.error_wrapper  .error_btn:hover {
+  background-color: #654b7a;
+}
+
+.error_wrapper  .error_btn:hover  a{
+  color: #ffffff;
+}
+</style>

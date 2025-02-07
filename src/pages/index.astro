@@ -1,0 +1,718 @@
+---
+
+import DoctorCard from '../components/DoctorCard/DoctorCard.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+import DCard from '../components/DCard/DCard.astro'
+import Steps from '@/components/Steps/Steps';
+import { GlowButton } from '@/components/GlowButton/GlowButton';
+import Banner from '@/components/Banner/Banner';
+
+const doctors = [
+	{id: 1, slug:'daria-evstafieva', name: 'Евстафьева Дарья Алексеевна', type: 'Главный врач, врач-психиатр, детский психиатр', img: '/img/team/evstafieva/Daria_Evstafieva.jpg'},
+	{id: 2, slug:'zhanna-aleshina', name: 'Алёшина Жанна Александровна', type: 'Врач-психиатр', img: '/img/team/aleshina/aleshina.jpg'},
+  {id:9, slug: 'elvira-yurova', name: 'Юрова Эльвира Гошгаровна', type: 'Врач-психиатр', img: '/img/team/yurova/yurova.jpg'},
+	{id: 3, slug:'ekaterina-kovaleva', name: 'Ковалева Екатерина Сергеевна', type: 'Терапевт, нутрициолог', img: '/img/team/kovaleva/kovaleva.jpg'},
+  {id: 5, slug:'irina-leonova', name: 'Леонова Ирина Алексеевна', type: 'Психолог', img: '/img/team/leonova/leonova.jpg'},
+  {id: 6, slug:'yana-zamyatina', name: 'Замятина Яна Владиславовна', type: 'Клинический психолог', img: '/img/team/zamyatina/zamyatina.jpg'},
+  {id: 7, slug:'olga-tutaeva', name: 'Тутаева Ольга Владимировна', type: 'Клинический психолог', img: '/img/team/tutaeva/tutaeva.jpg'},
+  {id: 8, slug:'alena-burlachenko', name: 'Бурлаченко Алёна Алексеевна', type: 'Клинический психолог', img: '/img/team/burlachenko/burlachenko.jpg'},
+  {id: 10, slug:'tatiana-abih', name: 'Абих Татьяна Юрьевна', type: 'Клинический психолог', img: '/img/team/abih/abih.jpg'},
+]
+
+---
+
+<MainLayout title="Психолог | Психиатр | Семейный психолог | Центр современной психотерапии" description="Консультация психолога, психиатра и семейного психолога в Саратове.">
+
+  <!-- <section class="banner">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div  class="banner_info">
+            <div class="info_inner">
+              <h1>Центр современной психотерапии и cоматической патологии доктора Евстафьевой</h1>
+              <span>Запись на консультацию по номеру 533-717</span>
+              <GlowButton to="https://booking.medflex.ru/?user=e93566ccea0cd55bf69d931b8b8e8b94&filial=5565"/>
+            </div>
+         
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <Banner  client:only/>
+  <section class="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="title">
+            <h2>О нас</h2>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="about_description">
+            <p>Рады Вас приветствовать на нашем сайте "Центра современной психотерапии и соматической патологии доктора Евстафьевой"</p>
+            <p>Центр был основан доктором Евстафьевой Д,А. в 2019 году в городе Саратове.</p>
+            <p>
+              Наш центр осуществляет диагностику, лечение и профилактику широкого круга заболеваний по различным психическим направлениям.
+            </p>
+            <p>
+              Наши специалисты, психологи, психиатры, психотерапевты, работают со взрослыми , детьми и подростками.
+            </p>
+            <ul>
+              <li>У нас вы не найдете больничной атмосферы — мы хотим, чтобы вам было уютно и комфортно.</li>
+              <li>Терапия только с доказанной эффективностью</li>
+              <li>Уважительное отношение к любым различиям (культура, вероисповедание, сексуальная ориентация и т.д.)</li>
+              <li>Контроль качества услуг</li>
+              <li>Партнерские отношения с пациентом : не скрываем диагноз, доступно объясняем и отвечаем на все вопросы.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="founder">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="title">
+            <h2>Об основателе</h2>
+          </div>
+        </div>
+        <div class="col-12 col-lg-5">
+          <div class="founder_img">
+            <img src="/img/founder-crop.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="founder_intro_text">
+            <p>Дарья Алексеевна в 2010 году окончила Саратовский государственный медицинский университет им. В.И. Разумовского факультет "педиатрия" после проходила интернату по специальности " психиатрия", затем курсы по повышению своей квалификации и углубленные курсы для более точной диагностики и лечения. Дарья Алексеевна начинала свой путь в психоневрологическом диспансере г. Балаково, после сменила диспансерное направление на стационарное в Белоярской ЦРБ , затем совмещала работу в психоневрологическом диспансере г.Саратова и амбулаторный прием в частной клинике. </p>
+            <p>Открывая, сначала кабинет приема амбулаторных пациентов, Дарье Алексеевне очень хотелось, не назначать навязанных клиниками не нужных анализов , не вынуждать пациентов на не нужные услуги, итогом был сформирован центр, где была подобрана команда не только из высокопрофессиональных специалистов, а так же честных и добрых людей, которые всей душой хотят помогать людям по их призванию.</p>
+            <p>Сейчас "ЦСП" предлагает консультации опытных специалистов:</p>
+            <ul>
+              <li>врачей психиатров,</li>
+              <li>клинических психологов,</li>
+              <li>подростковых психологов,</li>
+              <li>психотерапевтов,</li>
+            </ul>
+            <p>по проблемам различного характера.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="doctors">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="title">
+            <h2>Наши специалисты</h2>
+            <p>Все наши специалисты – профессионалы, имеющие высшее психологическое и медицинское образование, которые регулярно повышают свою квалификацию.</p>
+          </div>
+        </div>
+        {doctors.map(doctor => 
+          <DCard name={doctor.name} type={doctor.type} imgSrc={doctor.img} id={doctor.id} slug={doctor.slug}/>
+        )}
+      </div>
+    </div>
+  </section>
+  <section class="why">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="title">
+            <h2>Почему нужно выбрать нас?</h2>
+            
+          </div>
+        </div>
+        <div class="col-12">
+          <Steps client:load/>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="note_text">
+              <b>Слова благодарности от пациентов являются самой ценной оценкой нашей деятельности</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="advantages">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="title">
+            <h2>Принципы нашей работы</h2>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mt-4 mb-4">
+          <div class="advantage">
+            <div class="advantage_icon">
+              <div class="blob"></div>
+              <i  class="ri-heart-3-line"></i>
+            </div>
+            <div class="advantage_description">
+              <span>Честность</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mt-4 mb-4">
+          <div class="advantage">
+            <div class="advantage_icon">
+              <div class="blob"></div>
+              <i class="ri-lock-star-line"></i>
+            </div>
+            <div class="advantage_description">
+              <span>Конфиденциальность</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mt-4 mb-4">
+          <div class="advantage">
+            <div class="advantage_icon">
+              <div class="blob"></div>
+              <i class="ri-first-aid-kit-line"></i>
+            </div>
+            <div class="advantage_description">
+              <span>Соответствие медицинской и психологической этике</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mt-4 mb-4">
+          <div class="advantage">
+            <div class="advantage_icon">
+              <div class="blob"></div>
+              <i class="ri-psychotherapy-line"></i>
+            </div>
+            <div class="advantage_description">
+              <span>Комплексный подход к лечению причин расстройств</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mt-4 mb-4">
+          <div class="advantage">
+            <div class="advantage_icon">
+              <div class="blob"></div>
+              <i class="ri-capsule-fill"></i>
+            </div>
+            <div class="advantage_description">
+              <span>Применение только проверенных методов лечения</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mt-4 mb-4">
+          <div class="advantage">
+            <div class="advantage_icon">
+              <div class="blob"></div>
+              <i class="ri-customer-service-line"></i>
+            </div>
+            <div class="advantage_description">
+              <span>Связь с пациентом на протяжении всех этапов лечения</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mt-4 mb-4">
+          <div class="advantage">
+            <div class="advantage_icon">
+              <div class="blob"></div>
+              <i class="ri-line-chart-line"></i>
+            </div>
+            <div class="advantage_description">
+              <span>Систематическое повышение квалификации и развитие в профессии</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="documents">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="title">
+              <h2>Документы</h2>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="documents_list">
+              
+                <h4>Адреса и телефоны органов исполнительной власти субъекта Российской Федерации в сфере охраны здоровья граждан</h4>
+      
+       <p>Министерство Здравоохранения Саратовской области г. Саратов, ул. Железнодорожная, д. 72, корп.2 тел. (8452) 50-63-53, 51-55- 52, 50-37-89 <a rel="noreferrer" href="mailto:minzdrav@saratov.gov.ru">minzdrav@saratov.gov.ru</a> 9:00-18:00</p>
+       <p>Территориальный орган Федеральной службы по надзору в сфере здравоохранения по Саратовской области Г. Саратов, улица Рабочая, дом 145/155, 4-ый этаж. Тел.: 8 (8452) 50-93-94 Факс: 8 (8452) 50-12-35 E-mail: <a rel="noreferrer" href="mailto:sarzdravn@reg64.roszdravnadzor.ru">sarzdravn@reg64.roszdravnadzor.ru</a></p>
+       <p>Управление Федеральной службы по надзору в сфере защиты прав потребителей и благополучия человека по Саратовской области Г. Саратов, улица Вольская, дом 7. Горячая линия 8-800-100-1858 Факс: (8452) 20-18-58. Эл. почта: <a rel="noreferrer" href="mailto:sarrpn@san.ru">sarrpn@san.ru</a></p>
+          <h4>Лицензия</h4>
+          <p>Центр современной психотерапии осуществляет медицинскую деятельность на основании бессрочной лицензии ЛО-64-01-004745 от 27.02.2020 г, выданной Министерством здравоохранения Саратовской области.</p>
+          <div id="license_link">
+            <button class="link_btn">
+              <a  href="https://roszdravnadzor.gov.ru/services/licenses?qrguid=769f68e787c29b735d93780ed4a6fcc2">Смотреть лицензию</a>
+            </button>        
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+</MainLayout>
+
+
+
+<style>
+
+  .note {
+    background-color: #654b7a;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .note .note_text {
+    text-align: center;
+  }
+
+  .note .note_text b{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .founder {
+  margin-bottom: 30px;
+  }
+
+  .founder .founder_img {
+    width: 100%;
+    height: 566px;
+    border-radius: 9px;
+    overflow: hidden;
+    padding: 15px;
+    background: #ffffff;
+    box-shadow: -2px -2px 8px #fff, -2px -2px 12px rgba(255, 255, 255, .5), inset 2px 2px 4px rgba(255, 255, 255, .1), 2px 2px 8px rgba(0, 0, 0, .15);
+  }
+
+  .founder .founder_img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 9px;
+
+  }
+
+  .founder .founder_intro_text {
+    background: #ffffff;
+  box-shadow: -2px -2px 8px #fff, -2px -2px 12px rgba(255, 255, 255, .5), inset 2px 2px 4px rgba(255, 255, 255, .1), 2px 2px 8px rgba(0, 0, 0, .15);
+  border-radius: 9px;
+  padding: 25px;
+  }
+
+  .founder .founder_intro_text p {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .founder .founder_intro_text ul li {
+    font-size: 17px;
+    padding-left: 25px;
+    color: #000000;
+    position: relative;
+    width: 100%;
+    list-style: none;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .founder .founder_intro_text ul li::before {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    content: "";
+    color: #a5a56a;
+    background-image: url(/icons/check.svg);
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    text-align: left;
+  }
+	
+	.brainContainer {
+  width: 50vw;
+  height: 50vw;
+  max-height: 400px;
+  max-width: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 999;
+}
+main{
+    position: relative;
+    height: 100vh;                                                   
+    width: 100vw;
+	background:#ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner {
+  background-image: url(/img/banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 94px);
+    width: 100%;
+    position: relative;
+    margin-top: 94px;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner .banner_info {
+  height: calc(100vh - 94px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner .banner_info .info_inner{
+  padding: 40px 15px;
+  border-radius: 9px;
+  background: rgba( 255, 255, 255, 0.5 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 6px );
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner .banner_info .info_inner h1{
+  font-size: 45px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #654b7a;
+  font-weight:600;
+}
+
+.banner .banner_info .info_inner span{
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.about {
+
+}
+
+.about .about_description {
+  background: #ffffff;
+  box-shadow: -2px -2px 8px #fff, -2px -2px 12px rgba(255, 255, 255, .5), inset 2px 2px 4px rgba(255, 255, 255, .1), 2px 2px 8px rgba(0, 0, 0, .15);
+  padding: 30px;
+  border-radius: 9px;
+}
+
+.about .about_description p{
+font-size: 17px;
+text-align: justify;
+margin: 5px 0;
+color: #000000;
+}
+
+.about_description ul {
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about_description ul li {
+    font-size: 17px;
+    padding-left: 25px;
+    color: #000000;
+    position: relative;
+    width: 100%;
+    list-style: none;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .about_description ul li::before {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    content: "";
+    color: #a5a56a;
+    background-image: url(/icons/check.svg);
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    text-align: left;
+  }
+
+  .advantages {
+
+  }
+
+ .advantages .advantage {
+  background: #ffffff;
+  box-shadow: -2px -2px 8px #fff, -2px -2px 12px rgba(255, 255, 255, .5), inset 2px 2px 4px rgba(255, 255, 255, .1), 2px 2px 8px rgba(0, 0, 0, .15);
+  border-radius: 9px;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 20%;
+    flex-grow: 1;
+    padding: 15px;
+    position: relative;
+ }
+
+ .advantages .advantage .advantage_icon{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+    
+    flex: 1 60px;
+}
+
+.advantages .advantage .advantage_icon i {
+  font-size: 30px;
+  color: #ffffff;
+  z-index: 21;
+}
+
+.advantages .advantage .advantage_icon .blob{
+  position: absolute;
+    top: 5%;
+    left: -30%;
+    border-radius: 40% 60% 70% 30%/40% 50% 60% 50%;
+    overflow: hidden;
+    background: #654b7a;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: morph 3s linear infinite;
+    animation: morph 3s linear infinite;
+    z-index: 20;
+}
+
+.advantages .advantage .advantage_description{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 50px;
+    position: relative;
+}
+
+
+.advantages .advantage .advantage_description span{
+  font-size: 18px;
+ 
+    color: #a5a56a;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+@-webkit-keyframes morph {
+    0%,
+    100% {
+        border-radius: 40% 60% 70% 30%/40% 40% 60% 50%
+    }
+    34% {
+        border-radius: 70% 30% 50% 50%/30% 30% 70% 70%
+    }
+    67% {
+        border-radius: 100% 60% 60% 100%/100% 100% 60% 60%
+    }
+}
+
+@keyframes morph {
+    0%,
+    100% {
+        border-radius: 40% 60% 70% 30%/40% 40% 60% 50%
+    }
+    34% {
+        border-radius: 70% 30% 50% 50%/30% 30% 70% 70%
+    }
+    67% {
+        border-radius: 100% 60% 60% 100%/100% 100% 60% 60%
+    }
+}
+
+.documents_list {
+  box-shadow: -2px -2px 8px #fff, -2px -2px 12px rgba(255, 255, 255, .5), inset 2px 2px 4px rgba(255, 255, 255, .1), 2px 2px 8px rgba(0, 0, 0, .15);
+  padding: 30px;
+  border-radius: 9px;
+  text-align: center;
+  background: #ffffff;
+  margin-bottom: 30px;
+}
+
+.documents_list h5 {
+  font-size: 18px;
+    color: #0c1720;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.documents_list p {
+  margin-bottom: 30px;
+    font-size: 15px;
+    color: #0c1720;
+    text-align: left;
+}
+
+.documents_list .license_link {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.documents_list .link_btn{
+  padding: 10px 20px;
+    cursor: pointer;
+    background-color: #654b7a;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 9px;
+}
+.documents_list .link_btn a{
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+}
+
+@media screen and (max-width: 1200px) {
+  .founder .founder_img {
+    width: 100%;
+    height:  630px;
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  .banner  {
+    height: 665px;
+  }
+
+  .banner  .banner_info{
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .founder .founder_img {
+    width: 100%;
+    height:  740px;
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+
+  .banner  {
+    height: 550px;
+  }
+
+  .banner  .banner_info .info_inner {
+    padding: 25px 15px;
+  }
+
+  .banner  .banner_info .info_inner h1{
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .founder .founder_img {
+    width: 100%;
+    height:  500px;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .founder .founder_img {
+    width: 100%;
+    height:  500px;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .founder .founder_intro_text p {
+    font-size: 16px;
+  }
+  .about .about_description p {
+    font-size: 16px;
+    text-align: left;
+    margin: 10px 0;
+  }
+
+  .about .about_description ul {
+    
+  }
+
+  .about .about_description ul li{
+    font-size: 16px;
+  }
+
+  .banner  {
+    height: 320px;
+  }
+
+  .banner  .banner_info .info_inner {
+    padding: 15px 15px;
+  }
+
+  .banner  .banner_info .info_inner span{
+    font-size: 16px;
+  }
+
+  .banner  .banner_info .info_inner h1{
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  
+}
+
+
+@media screen and (max-width: 420px) {
+  .banner  {
+    height: 290px;
+  }
+
+  .banner  .banner_info .info_inner {
+    padding: 10px 10px;
+  }
+
+  .banner  .banner_info .info_inner span{
+    font-size: 14px;
+  }
+
+  .banner  .banner_info .info_inner h1{
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .founder .founder_img {
+    height:   380px;
+  }
+}
+</style>

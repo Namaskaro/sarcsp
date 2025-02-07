@@ -1,0 +1,33 @@
+.tabs_content p {
+  font-size: 18px;
+  color: #000000;
+}
+.tabs_content ul {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs_content ul li {
+  font-size: 18px;
+  padding-left: 25px;
+  color: #000000;
+  position: relative;
+  width: 100%;
+  list-style: none;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.tabs_content ul li::before {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  content: '';
+  color: #a5a56a;
+  background-image: url(/icons/check.svg);
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  text-align: left;
+}

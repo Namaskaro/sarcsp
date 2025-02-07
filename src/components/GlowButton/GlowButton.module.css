@@ -1,0 +1,13 @@
+@import '../../styles/global.css';
+
+.Inner {
+  @apply tw-relative tw-flex tw-w-fit;
+}
+
+.BtnGl {
+  @apply tw-absolute tw-transition-all tw-duration-1000 tw-opacity-70 tw--inset-px tw-bg-gradient-to-r tw-from-purple-400 tw-via-green-500 tw-to-blue-500 tw-rounded-xl tw-blur-xl group-hover:tw-opacity-100 group-hover:tw--inset-1 group-hover:tw-duration-200;
+}
+
+.Link {
+  @apply hover:tw-no-underline tw-relative tw-inline-flex tw-items-center tw-justify-center tw-px-4 tw-py-2 tw-text-sm md:tw-text-lg tw-font-medium tw-text-[#654b7a] tw-transition-all tw-duration-200 tw-bg-white  tw-rounded-xl focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900;
+}

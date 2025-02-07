@@ -1,0 +1,435 @@
+---
+import ContactsLayout from "../layouts/ContactsLayout.astro";
+
+
+---
+
+
+<ContactsLayout title="Контакты Центра Современной психотерапии и соматической патологии" description="Контакты Центра Современной психотерапии и соматической патологии">
+<main>
+  <section class="contacts">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="breadcrumbs">
+            <ul>
+              <li><a href="/">Главная</a></li>
+              <li><a href="/kontakti" class="active">Контакты</a></li>
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="title">
+            <h1>Контакты</h1>
+          </div>
+        </div>
+        <div class="col-12 col-xl-6">
+          <div class="contacts_main">
+  
+            <div class="address">
+              <div class="i_wrapper">
+                <i class="ri-map-pin-2-line"></i>
+              </div>
+              <div class="address_description">
+                <span>
+                  Адрес
+                </span>
+                <a href="">г. Саратов ул. Бахметьевская 20/24</a>
+              </div>
+
+            </div>
+            <div class="phone">
+              <div class="i_wrapper">
+                <i class="ri-customer-service-line"></i>
+              </div>
+              <div class="phone_description">
+                <span>Телефон</span>
+              <a href="">+79033283717</a>
+              </div>
+              
+            </div>
+            <div class="email">
+              <div class="i_wrapper">
+                <i class="ri-at-line"></i>
+              </div>
+              <div class="email_description">
+                <span>Email</span>
+              <a href="">csp.psy@yandex.ru</a>
+              </div>
+              
+            </div>
+            <div class="info">
+              <div class="i_wrapper">   
+              <i class="ri-info-i"/>
+              </div>
+              <div class="info_description">
+                <span>ИП Евстафьева Дарья Алексеевна</span>
+                <a href="">ИНН 645505109956</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-6">
+          
+           
+              <div class="map" id="map"></div>
+            
+          
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</ContactsLayout>
+
+<style>
+  .contacts {
+    margin-top: 100px;
+    margin-bottom: 0px;
+  }
+  .map {
+    height: 500px;
+    /* margin-left: -15px;
+    margin-right: -15px; */
+  }
+
+  .contacts_main {
+    /* margin-left: -15px; */
+    /* margin-right: -15px; */
+    display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". ."
+    ". ."; 
+  }
+
+  .contacts_main .phone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top right, #654b7a -5%, #8f10b7 50%);
+    padding-left: 25px;
+    height: 250px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+  }
+
+   .i_wrapper {
+    padding: 10px;
+    width: 65px;
+    height: 65px;
+    background: #ffffff;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-right: 20px; */
+  }
+  .contacts_main .phone i {
+    font-size: 35px;
+    color:#8f10b7;
+    
+  }
+
+  .contacts_main .phone .phone_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contacts_main .phone .phone_description a {
+    color:#ffffff;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  .contacts_main .phone .phone_description span {
+    color:#ffffff;
+    font-size: 26px;
+    font-family: "Lato", sans-serif;
+  }
+
+  .contacts_main .address {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top right, #654b7a -5%, #8f10b7 50%);
+    padding-left: 25px;
+    height: 250px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+  }
+
+  
+
+  .contacts_main .address .address_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contacts_main .address .address_description a {
+    color:#ffffff;
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+  }
+
+  .contacts_main .address .address_description span {
+    color:#ffffff;
+    font-size: 26px;
+    font-family: "Lato", sans-serif;
+  }
+
+  .contacts_main .address i {
+    font-size: 35px;
+    color:#8f10b7;
+    
+  }
+
+
+
+  .contacts_main .address span {
+    color:#ffffff;
+    font-size: 30px;
+    font-family: "Lato", sans-serif;
+  }
+
+
+
+  .contacts_main .email {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top right, #654b7a -5%, #8f10b7 50%);
+    padding-left: 25px;
+    height: 250px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+  }
+
+  
+
+  .contacts_main .email .email_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contacts_main .email .email_description a {
+    color:#ffffff;
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+  }
+
+  .contacts_main .email .email_description span {
+    color:#ffffff;
+    font-size: 26px;
+    font-family: "Lato", sans-serif;
+  }
+
+  .contacts_main .email i {
+    font-size: 35px;
+    color:#8f10b7;
+    
+  }
+
+
+
+  .contacts_main .address span {
+    color:#ffffff;
+    font-size: 30px;
+    font-family: "Lato", sans-serif;
+  }
+
+
+  .contacts_main .info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top right, #654b7a -5%, #8f10b7 50%);
+    padding-left: 25px;
+    height: 250px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+  }
+
+  
+
+  .contacts_main .info .info_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contacts_main .info .info_description a {
+    color:#ffffff;
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+  }
+
+  .contacts_main .info .info_description span {
+    color:#ffffff;
+    font-size: 26px;
+    font-family: "Lato", sans-serif;
+  }
+
+  .contacts_main .info i {
+    font-size: 35px;
+    color:#8f10b7;
+    
+  }
+
+  @media screen and (max-width: 1600px) {
+    .i_wrapper {
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  .contacts_main .address .address_description a {
+    color:#ffffff;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+  }
+
+  .contacts_main .address .address_description span {
+    color:#ffffff;
+    font-size: 22px;
+    font-family: "Lato", sans-serif;
+  }
+  .contacts_main .phone .phone_description a {
+    color:#ffffff;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  .contacts_main .phone .phone_description span {
+    color:#ffffff;
+    font-size: 22px;
+    font-family: "Lato", sans-serif;
+  }
+  .contacts_main .email .email_description a {
+    color:#ffffff;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+  }
+
+  .contacts_main .email .email_description span {
+    color:#ffffff;
+    font-size: 22px;
+    font-family: "Lato", sans-serif;
+  }
+  .contacts_main .info .info_description a {
+    color:#ffffff;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+  }
+
+  .contacts_main .info .info_description span {
+    color:#ffffff;
+    font-size: 22px;
+    font-family: "Lato", sans-serif;
+  }
+  }
+
+  @media screen and (max-width: 991px) {
+ .i_wrapper {
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .contacts_main .address .address_description a {
+    color:#ffffff;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+  }
+
+  .contacts_main .address .address_description span {
+    color:#ffffff;
+    font-size: 22px;
+    font-family: "Lato", sans-serif;
+  }
+  .contacts_main .phone .phone_description a {
+    color:#ffffff;
+    font-size: 16px;
+    text-decoration: none;
+  }
+                                                                                          
+  .contacts_main .phone .phone_description span {
+    color:#ffffff;
+    font-size: 22px;
+    font-family: "Lato", sans-serif;
+  }
+  .contacts_main .email .email_description a {
+    color:#ffffff;
+    font-size: 16px;
+    text-decoration: none;
+  }
+                                                                                          
+  .contacts_main .email .email_description span {
+    color:#ffffff;
+    font-size: 22px;
+    font-family: "Lato", sans-serif;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contacts_main {
+    /* margin-left: -15px; */
+    /* margin-right: -15px; */
+    display: grid; 
+  grid-template-columns: 1fr ; 
+  grid-template-rows: 1fr 1fr 1fr 1fr ; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "."
+    "."
+    "."
+    "."; 
+  }
+
+  
+}
+
+@media screen and (max-width: 480px) {
+  .contacts_main .address {
+    height: 190px;
+  }
+  .contacts_main .email {
+    height: 190px;
+  }
+
+  .contacts_main .phone {
+    height: 190px;
+  }
+  .contacts_main .info {
+    height: 190px;
+  }
+}
+</style>

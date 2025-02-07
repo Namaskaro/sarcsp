@@ -1,0 +1,143 @@
+---
+import { GlowButton } from "../GlowButton/GlowButton";
+
+---
+
+
+<footer>
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12 col-lg-4">
+        <div class="footer_main">
+          <img src="/icons/logo-white.svg" alt="">
+          <button class="recall_btn">
+            <a href="">Записаться</a>
+          </button>
+         
+        </div>
+        
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="footer_menu">
+          <h5>Меню</h5>
+          <ul>
+            <li><a href="/">О нас</a></li>
+            <li><a href="/doctor">Специалисты</a></li>
+            <li><a href="/kontakti">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="footer_info">
+          <h5>Юридическая информация</h5>
+          <span>ИП Евстафьева Дарья Алексеевна</span>
+          <span>ИНН 645505109956</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="footer__bottom">
+      <span>© 2019-2025 Центр современной психотерапии. Все права защищены</span>
+    </div>
+  </div>
+</footer>
+
+
+<style>
+  footer {
+    background: #654b7a;                                                                    
+    padding: 30px 0;
+  }
+
+  footer .footer__bottom {
+    padding-top: 30px;
+    background: #654b7a;  
+    text-align: center;
+    border-top: 1px solid #ffffff;    
+  }
+
+  footer .footer__bottom span{
+    font-size: 14px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  footer .footer_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer .footer_main img{
+    width: 174px;
+    height: 78px;
+  }
+
+  footer .footer_main .recall_btn{
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #ffffff;
+    font-size: 16px;
+    border: none;
+    border-radius: 9px;
+    outline: none;
+    width: 178px;
+    margin-top: 15px;
+  }
+
+  footer .footer_main .recall_btn a{
+    text-decoration: none;
+    color: #654b7a;
+    font-size: 16px;
+  
+  }
+
+  footer .footer_menu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .footer_menu h5 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  footer .footer_menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  footer .footer_menu ul li {}
+  footer .footer_menu ul li a{
+    font-size: 16px;
+    color: #ffffff;
+  }
+
+  footer .footer_info {
+    display: flex;
+    flex-direction: column;
+  }
+  footer .footer_info h5{
+    color:#ffffff;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  footer .footer_info span{
+    font-size: 16px;
+    color: #ffffff;
+  }
+
+  @media screen and (max-width: 991px) {
+    footer .footer_info {
+      text-align: center;
+    }
+    footer .footer_main {
+      margin-bottom: 25px;
+    }
+  }
+</style>                              

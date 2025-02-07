@@ -1,0 +1,1058 @@
+---
+import Carousel from "../../components/Carousel/Carousel";
+import Diploma from "../../components/Diploma/Diploma.astro";
+import Fancybox from "../../components/Fancybox/Fancybox";
+import MainLayout from "../../layouts/MainLayout.astro";
+const { slug } = Astro.params;
+
+export function getStaticPaths() {
+  return [
+    {params: {slug: 'daria-evstafieva'}},
+    {params: {slug: 'zhanna-aleshina'}},
+    {params: {slug: 'ekaterina-kovaleva'}},
+    {params: {slug: 'irina-leonova'}},
+    {params: {slug: 'yana-zamyatina'}},
+    {params: {slug: 'olga-tutaeva'}},
+    {params: {slug: 'elvira-yurova'}},
+    {params: {slug: 'tatiana-abih'}},
+  ]
+}
+
+const doctors = [
+{id: 1,
+     name: 'Евстафьева Дарья Алексеевна', 
+     slug: 'daria-evstafieva',
+     type: 'Психиатр', 
+     expTime: 13,
+     img: '/img/team/evstafieva/Daria_Evstafieva.jpg',
+     reviewLink: 'https://prodoctorov.ru/saratov/vrach/494751-evstafeva/',
+    experience: [
+      'ГУЗ «Балаковский психоневрологический диспансер» Министерства здравоохранения Саратовской области',
+      'ГУЗ "Саратовский психоневрологический диспансер" Министерства здравоохранения Саратовской области',
+      'ООО "Первый детский медицинский центр"',
+      'ООО "Медгард"'
+    ],
+    diplomas: [
+      '/img/team/evstafieva/evstafieva_1.jpg',
+      '/img/team/evstafieva/evstafieva_2.jpg',
+      '/img/team/evstafieva/evstafieva_3.jpg',
+      '/img/team/evstafieva/evstafieva_4.jpg',
+      '/img/team/evstafieva/evstafieva_5.jpg',
+      '/img/team/evstafieva/evstafieva_6.jpg',
+    ],
+    greetingText: 'Рады Вам представить основателя клиники «Центр современной психотерапии и соматической патологии доктора Евстафьевой» Евстафьеву Дарью Алексеевну. Врача психиатра, детского психиатра. ',
+    techniques: [
+     
+    ],
+    preRequest: 'К ней можно обратиться, если Вас беспокоит:',
+    requests: [
+      'Тревожность,  у детей и взрослых',
+      'Панические атаки',
+      'Психосоматические заболевания',
+      'Ипохондрия',
+      'Необычные и неприятные телесные ощущения',
+      'Хроническая боль',
+      'Длительно повышенное или пониженное настроение',
+      'Перепады настроения в течение дня',
+      'Навязчивые мысли, действия, ритуалы',
+      'Другие навязчивости',
+      'Расстройства сна',
+      'Бессонница',
+      'Повышенная сонливость',
+      'Трудности при засыпании и пробуждении',
+      'Бредовые, галлюцинаторные расстройства',
+      'Нарушение поведения у детей и взрослых',
+      'Снижение когнитивных функций у детей и пожилых',
+      'Нарушения аппетита ',
+      'Импульсивное переедание',
+      'Отказ от приема пищи',
+      'Снижение аппетита ',
+      'Изменения личности и характера ',
+      'Замкнутость,',
+      'Застенчивость',
+      'Агрессивность',
+      'Зависимость',
+      'И другие'
+    ],
+    preDiagnostic: 'Врач диагностирует и лечит следующие состояния и расстройства:',
+    diagnostic: [
+      'Обсессивно-компульсивное расстройство (ОКР);',
+      'Паническое расстройство ( ПР):',
+      'Генерализованное тревожное расстройство (ГТР)',
+      'Расстройства пищевого поведения( РПП);',
+      'Расстройства личности;',
+      'Аффективные расстройства;',
+      'Рекуррентное депрессивное расстройство;',
+      'Биполярное аффективное расстройство;',
+      'Шизофрения; ',
+      'РАС -расстройство аутистического спектра;',
+      'ЗРР-задержка речевого развития;',
+      'ЗПРР-задержка психоречевого развития;',
+      'СДВГ -синдром дифицита внимания и гиперактивности;',
+    ],
+    afterwords: 'Работаю со сложными клиническими ситуациями. Бережно и уважительно , с вниманием отношусь к  своим пациентам, гарантирую безопасность и конфедициальность.',
+    phone: '533-717',
+    formats: ['Очно', 'Онлайн (whatsapp, telegram) '],
+    sessionTime: 40,
+    secondSessionTime: 30,
+    prices: [
+    'Первичный прием - 4500 рублей',
+    'Повторный прием - 3000 рублей',
+    'Выезд врача на дом - от 6000 рублей'
+    ],
+    action: []
+    },
+    {id: 2,
+     name: 'Алёшина Жанна Александровна', 
+     slug: 'zhanna-aleshina',
+     type: 'Психиатр', 
+     expTime: 11,
+     img: '/img/team/aleshina/aleshina_1.jpg',
+     reviewLink: 'https://prodoctorov.ru/saratov/vrach/966242-alyoshina/',
+    experience: [
+      'Клиника профессора Чуракова МЦ «Врачебная практика»',
+      'ГУЗ «Областная клиническая больница имени святой Софии»',
+    ],
+    diplomas: [
+  
+    ],
+    phone: '533-717',
+    greetingText: 'Рада Вас приветствовать! Меня зовут Алешина Жанна Александровна. Я врач психиатр и психотерапевт, работаю со взрослыми пациентами. ',
+    preRequest: 'Вы можете ко мне обратиться, если:',
+    requests: [
+      'Беспокоят фобии/страхи разного спектра',
+      'Присутствуют тревожность и панические атаки',
+      'Подозреваете у себя психосоматические заболевания, ипохондрию',
+      'Беспокоят необычные и неприятные телесные ощущения, и хронические боли. (синдром раздраженного кишечника, хронические боли различной локализации, спазмы, нарушения дыхания, тошнота, «ком» в горле и т.д.',
+      'Не можете справиться с психическими последствиями острого стресса или длительной психотравмирующей ситуации',
+      'Заметили снижение энергетического потенциала, хроническую усталость',
+      'Переживаете из-за длительно повышенного или пониженного настроение, а так же беспричинных перепадов настроения в течение дня',
+      'Беспокоят навязчивые мысли, действия, ритуалы, другие навязчивости',
+      'Расстройства сна (бессонница, повышенная сонливость, трудности при засыпании и пробуждении)',
+      'Бредовые, галлюцинаторные расстройства',
+      'Заметили нарушение поведения, снижение когнитивных функций в пожилом возрасте (колебания настроения, тревожность у пожилых, а также у пациентов с органическим поражением головного мозга)',
+      ' Беспокоят нарушения аппетита (импульсивное переедание, отказ от приема пищи, снижение аппетита)',
+      'Присутствуют изменения личности и характера (замкнутость, застенчивость, агрессивность, зависимость и др.)',
+      
+    ],
+    preDiagnostic: 'Помогу с диагностированием и лечением следующих расстройств:',
+    diagnostic: [
+      'Обсессивно-компульсивное расстройство (ОКР);',
+      'Паническое расстройство (ПР):',
+      'Генерализованное тревожное расстройство (ГТР)',
+      'Расстройства пищевого поведения( РПП);',
+      'Расстройства личности;',
+      'Аффективные расстройства;',
+      'Рекуррентное депрессивное расстройство;',
+      'Биполярное аффективное расстройство;',
+      'Шизофрения;  ',
+      
+    ],
+    afterwords: 'Работаю с большим спектром заболеваний, начиная с невротических расстройств и депрессий, заканчивая тяжелыми психическими заболеваниями. Помогу Вам в лечение после длительных и безуспешных курсов, а также долгого поиска специалиста. Я бережно и уважительно отношусь к своим клиентам, уделяю большое внимание конкретно Вам и Вашим особенностям, что гарантирует качественное и комфортное лечение. В ходе нашей работы я гарантирую безопасность и конфиденциальность.',
+    formats: ['Очно', 'Онлайн (whatsapp, telegram) '],
+    sessionTime: 40,
+    secondSessionTime: 30,
+    prices: [
+    'Первичный прием - 4000 рублей',
+    'Повторный прием - 3500 рублей',
+    'Выезд врача на дом - от 6000 рублей'
+    ],
+    action: []
+    },
+    {id: 3,
+     name: 'Ковалева Екатерина Сергеевна', 
+     slug: 'ekaterina-kovaleva',
+     type: 'Терапевт, Нутрициолог', 
+     expTime: 9,
+     img: '/img/team/kovaleva/kovaleva.jpg',
+     reviewLink: 'https://prodoctorov.ru/saratov/vrach/788681-kovaleva/',
+    experience: [
+      'Клиника «Альфа-Центр Здоровья»',
+      'Косметология «Океания» на Валовой',
+    ],
+    diplomas: [
+  
+    ],
+    phone: '533-717',
+    prices: [
+    'Первичный прием - 1500 рублей',
+    'Повторный прием - 1300 рублей',
+    'Выезд врача на дом - ОТ 3500 рублей'
+    ],
+    action: []
+    },
+    
+    {id: 5,
+     name: 'Леонова Ирина Алексеевна', 
+     slug: 'irina-leonova',
+     type: 'Психолог', 
+     expTime: 6,
+     img: '/img/team/leonova/leonova.jpg',
+     reviewLink: 'https://prodoctorov.ru/saratov/vrach/1006522-leonova/',
+    experience: [
+      'Центр Современной Психотерапии',
+      'Частная практика психологического консультирования',
+    ],
+    diplomas: [
+      '/img/team/leonova/leonova_1.jpg',
+      '/img/team/leonova/leonova_2.jpg',
+      '/img/team/leonova/leonova_3.jpg',
+      '/img/team/leonova/leonova_4.jpg',
+      '/img/team/leonova/leonova_5.jpg',
+      '/img/team/leonova/leonova_6.jpg',
+      '/img/team/leonova/leonova_7.jpg',
+      '/img/team/leonova/leonova_8.jpg',
+      '/img/team/leonova/leonova_9.jpg',
+      '/img/team/leonova/leonova_10.jpg',
+    ],
+    greetingText: 'Представляем вам клинического психолога Леонову Ирину Алексеевну. Осуществляет психотерапевтическую деятельность, применяя в своей практике приёмы психологической консультации и коррекции.',
+    preTechniques: 'Работает в интегративном подходе и индивидуально подбираю инструменты для совместной работы в техниках:',
+    techniques: [
+      'КПТ техники и протоколы;',
+      'Cхема-терапии'
+    ],
+    preRequest: 'Если вас беспокоит:',
+    requests: [
+      'Тревога (тревожность)',
+      'Апатия',
+      'Депрессия',
+      'Нарушение пищевого поведения',
+      'Переедание ',
+      'Чистки/диеты/голодовки ',
+      'Межличностные и внутриличностные конфликты',
+      'Детско-родительские отношения ',
+      'Негативные мысли, установки и паттерны ',
+    ],
+    preDiagnostic: 'Поможет вам:',
+    diagnostic: [
+      'Пережить утрату',
+      'Пережить травматический опыт (ПТСР) ',
+      'Познать себя',
+      'C вопросами социализации и личностными границами '
+    ],
+    afterwords: 'Работает с подростками от 14 лет и взрослыми . Жду Вас на консультацию и Буду рада Вам помочь . ',
+    formats: ['Очно', 'Онлайн (whatsapp, telegram) '],
+    sessionTime: 60,
+    prices: [
+    'Первичный прием - 3000 рублей',
+    'Семейная консультация - 3500 рублей',
+    'Консультация для подростков - 2500 рублей'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+    ],
+    phone: '533-717',
+    action: []
+    },
+    {id: 6,
+     name: 'Замятина Яна Владиславовна', 
+     slug: 'yana-zamyatina',
+     type: 'Клинический психолог', 
+     expTime: 5,
+     img: '/img/team/zamyatina/zamyatina.jpg',
+     reviewLink: 'https://prodoctorov.ru/saratov/vrach/976706-zamyatina/',
+    experience: [
+      'ГУЗ «Областная клиническая больница имени святой Софии»',
+      'Центр Современной Психотерапии',
+    ],
+    diplomas: [
+      '/img/team/zamyatina/zamyatina_1.jpg',
+      '/img/team/zamyatina/zamyatina_2.jpg',
+      '/img/team/zamyatina/zamyatina_3.jpg',
+      '/img/team/zamyatina/zamyatina_4.jpg',
+
+    ],
+    greetingText: 'Рады вас приветствовать на странице нашего Центра! Представляем вам нашего клинического психолога Замятину Яну Владиславовну, работающую в интегративном подходе. Принимает подростков от 14 лет, взрослых и семейные пары.',
+    preRequest: 'Если Вас беспокоят:',
+    requests: [
+     'Hарушения психического здоровья',
+     'Проявления психосоматики',
+     'Перепады настроения',
+     'Тревога',
+     'OKР (навязчивости)',
+     'Панические атаки',
+     'Cтрахи/ фобии',
+     'Нарушения самооценки',
+     'Cемейные конфликты, ',
+     'Детско-родительские отношения',
+
+    ],
+    preDiagnostic: 'Если Вы настроены',
+    diagnostic: [
+      'Менять свою жизнь',
+      'Устали от чувства вины и апатии, которые мешают Вашей полноценной жизни',
+      'Проработать детские психотравмы, то ждём вас на консультации!',
+    ],
+    afterwords: 'Яна Владиславовна бережно и уважительно относится к своим пациентам и гарантирует безопасность и конфиденциальность',
+    formats: ['Очно', 'Онлайн (whatsapp, telegram) '],
+    sessionTime: 60,
+    phone: '533-717',
+    prices: [
+    'Прием - 3000 рублей',
+    'Семейная консультация - 3500 рублей'
+    ],
+    action: []
+    },
+    {id: 7,
+     name: 'Тутаева Ольга Владимировна', 
+     slug: 'olga-tutaeva',
+     type: 'Клинический психолог', 
+     expTime: 16,
+     img: '/img/team/tutaeva/tutaeva.jpg',
+     reviewLink: 'https://prodoctorov.ru/saratov/vrach/369540-tutaeva/',
+    experience: [
+      'Центр Современной Психотерапии',
+      'ГУЗ «Областная клиническая больница имени святой Софии»',
+    ],
+    diplomas: [
+      
+    ],
+    greetingText: 'Рады вас приветствовать на странице нашего Центра! Представляем вам нашего клинического психолога со стажем работы более 17 лет Тутаеву Ольгу Владимировну. Ольга Владимировна практикует психологическую консультацию и поддержку индивидуально, подросткам от 14 лет и семейным парам. В работе использует различные методы и подбирает наиболее подходящие под Ваши запросы.',
+    preTechniques: 'Интегративные методы психотерапии:',
+    techniques: [
+      'Системная семейная психотерапия',
+      'Консультирование и Психотерапия детско- родительских отношений',
+      'Психотерапия личности методом трансактнного анализа',
+      'Психотерапия психосоматики и невроза',
+      'Психотерапия суицидального поведения',
+      'Арт- терапия личности',
+      'Психосинтез личностного роста',
+      'Реабилитация и психотерапия всех видов зависимости',
+      'Консультирование и психотерапия по вопросам перинатальной и репродуктивной психологии',
+    ],
+    requests: [
+     
+    ],
+    afterwords: 'Бережно и уважительно относится к своим клиентам, гарантирует безопасность и конфиденциальность.',
+    formats: ['Очно', 'Онлайн (whatsapp, telegram) '],
+    sessionTime: 60,
+    phone: '533-717',
+    prices: [
+    'Прием - 3500 рублей ',
+    'Семейная консультация - 4000 рублей'
+
+    ],
+    action: []
+    },
+    {id: 10,
+     name: 'Абих Татьяна Юрьевна', 
+     slug: 'tatiana-abih',
+     type: 'Клинический психолог', 
+     expTime: 6,
+     img: '/img/team/abih/abih.jpg',
+     reviewLink: '',
+    experience: [
+      'Центр Современной Психотерапии',
+      
+    ],
+    diplomas: [
+      '/img/team/abih/abih_1.jpg',
+      '/img/team/abih/abih_2.jpg',
+      '/img/team/abih/abih_3.jpg',
+      '/img/team/abih/abih_4.jpg',
+    ],
+    greetingText: '',
+    techniques: [
+     
+    ],
+    requests: [
+     
+    ],
+    afterwords: '',
+    phone: '533-717',
+    formats: ['Очно', 'Онлайн (whatsapp, telegram) '],
+    sessionTime: 60,
+    prices: [
+    'Прием - 3000 рублей ',
+    
+
+    ],
+    action: []
+    },
+
+    {id: 9,
+     name: 'Юрова Эльвира Гошгаровна', 
+     slug: 'elvira-yurova',
+     type: 'Врач-психиатр', 
+     expTime: 5,
+     img: '/img/team/yurova/yurova.jpg',
+     reviewLink: 'https://prodoctorov.ru/saratov/vrach/1246947-yurova/',
+    experience: [
+      'Центр Современной Психотерапии',
+      'ГУЗ "Энгельсская психиатрическая больница"',
+    ],
+    diplomas: [
+      
+    ],
+    greetingText: '',
+    techniques: [
+     
+    ],
+    requests: [
+     
+    ],
+    afterwords: '',
+    phone: '533-717',
+    formats: ['Очно', 'Онлайн (whatsapp, telegram) '],
+    sessionTime: 40,
+    secondSessionTime: 30,
+    prices: [
+    'Прием - 3000 рублей ',
+    'Повторный прием - 2700 рублей'
+
+    ],
+    action: []
+    },
+]
+
+const doctor = doctors.find(doctor => doctor.slug === slug)
+const diplomas = doctor?.diplomas?.map(item => item)
+const actions = doctor?.action?.map(action => action)
+---
+
+
+
+
+<MainLayout title={doctor!.name} description={doctor!.name}>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="breadcrumbs">
+            <ul>
+              <li><a href="/">Главная</a></li>
+              <li><a href="/doctors">Специалисты</a></li>
+              <li><a class="active" href={`/doctors/${slug}`}>{doctor?.name}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="title">
+        <h1>{doctor?.name}</h1>
+      </div>
+      <div class="row">
+        
+        <div class="col-12 col-lg-6">
+          <div class="doctor_img">
+            <img src={doctor?.img} alt={doctor?.name}>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="doctor_description">
+            <h4>{doctor?.name}</h4>
+            <h5>{doctor?.type}</h5>
+            <span>Стаж работы {doctor?.expTime} лет</span>
+            <div class="doctor_experience">
+              <ul>
+                {doctor?.experience.map(item => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <!-- <div class="doctor_price">
+              {doctor?.prices.map((price) => (
+                <span>{price}</span>
+                <br />
+              ))}
+            </div> -->
+            <div class="action_buttons">
+              <button class="btn"><a href="https://booking.medflex.ru/?user=e93566ccea0cd55bf69d931b8b8e8b94">Записаться</a></button>
+              <button class="btn"><a href={doctor?.reviewLink}>Смотреть отзывы</a></button>
+            </div>
+          </div>
+          </div>
+          <div class="col-12">
+            <div class="title">
+              <h2>Информация</h2>
+            </div>
+            <div class="info_wrapper">
+              <div class="greetings">
+                <p>{doctor?.greetingText}</p>
+              </div>
+              <div class="techniques">
+                {doctor?.preTechniques && <p>{doctor.preTechniques}</p>}
+                {doctor?.techniques && 
+                <ul>
+                {doctor?.techniques.map(tech => (
+                  <li>{tech}</li>
+                ))}
+                </ul>
+                }
+              </div>
+              {doctor?.requests?.length! > 0 &&
+              <div class="requests">
+                 
+                <p>{doctor?.preRequest}</p>
+                <ul>
+                  {doctor?.requests?.map(req => (
+                    <li>{req}</li>
+                  ))}
+                </ul>
+                
+              </div>
+              }
+              {doctor?.diagnostic?.length! > 0 && 
+              <div class="diagnostic">
+                <p>{doctor?.preDiagnostic}</p>
+                <ul>
+                  {doctor?.diagnostic?.map(d => (
+                    <li>{d}</li>
+                  ))}
+                </ul>
+              </div>
+              }
+              {doctor?.afterwords && 
+              <div class="afterwords">
+                <p>{doctor.afterwords}</p>
+              </div>
+              }
+              {doctor?.phone &&   
+              <div class="phone">
+                <p>Телефон для записи: <a href={`tel:${doctor.phone}`}>{doctor.phone}</a></p>
+                <p>(с 9:00 до 19:00
+После запись возможна через сайт центра, при наличии свободных окон.
+Также возможна запись через директ).</p>
+              </div>
+              }
+              <div class="formats">
+                <ul>
+                  {doctor?.formats?.map(format => (
+                    <li>{format}</li>
+                  ))}
+                </ul>
+              </div>
+              {doctor?.sessionTime &&
+                <div class="session">
+                <p>Сессия: <strong>{doctor?.sessionTime} мин</strong></p>
+              </div>
+              }
+              {doctor?.secondSessionTime &&
+                <div class="session">
+                <p>Повторная сессия: <strong>{doctor?.secondSessionTime} мин</strong></p>
+                </div>
+                }
+              <div class="price">
+                <p>Стоимость:</p>
+                {doctor?.prices.map(price => (
+                  <ul>
+                  <li><strong>{price}</strong></li>
+                </ul>
+                ))}
+                
+              </div>
+              {doctor?.reviewLink && 
+                <div class="review">
+                  <p>Вы можете ознакомиться с отзывами на проверенном сайте ПроДокторов  </p>
+                </div>
+              }
+              <div class="actions">
+                <button class="btn"><a href={doctor?.reviewLink}>Смотреть отзывы</a></button>
+                <button class="btn"><a href="https://booking.medflex.ru/?user=e93566ccea0cd55bf69d931b8b8e8b94">Запись онлайн</a></button>
+                
+              </div>
+            </div>
+          </div>
+          {diplomas?.length! > 0 &&   
+          
+          <div class="col-12">
+            <div class="title">
+              <h2>Дипломы и сертификаты</h2>
+            </div>
+            <div class="diplomas_wrapper">
+              <Fancybox
+          client:only="react"
+          options={{
+            Carousel: {
+              infinite: false,
+            },
+            Thumbs: false,
+          }}
+          >
+          {diplomas?.map(diploma => (
+            <Diploma diploma={diploma}/>
+
+         ))}
+         </Fancybox>
+       </div>
+      </div>
+          
+          }
+          
+     {actions?.length! > 0 &&         <div class="col-12">                                                                                                                    
+       <div class="title">
+         <h2>Специалист в работе</h2>
+       </div>
+       <div class="carousel_wrapper">
+        <Carousel 
+        slides={actions} 
+        client:only="react"
+        perView={{                                            
+   0: {
+     slidesPerView: 1,
+     spaceBetween: 20,
+   },
+   768: {
+     slidesPerView: 2,
+     spaceBetween: 20,
+   },
+ }}
+        />
+         
+       </div>
+       
+     </div>}
+
+
+
+ </div>
+</div>
+</MainLayout>
+
+<style>
+  main {
+    padding-top: 100px;
+    margin-bottom: 30px;
+  }
+
+  .doctor_img {
+    height: 660px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 9px;
+    padding: 20px;
+    box-shadow: 2px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    background-color: #fff;
+    margin-bottom: 20px;
+  }
+  .doctor_img img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 9px;
+  }
+
+  .doctor_price {
+    text-align: center;
+    
+  }
+
+  .doctor_price span{
+    font-size: 18px;
+    font-weight: 600;
+    color: #654b7a;
+  }
+
+  .carousel_wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-button-next {
+position: absolute;
+top: 50%;
+}
+.swiper-button-prev {
+  position: absolute;
+top: 50%;
+}
+.doctor_description {
+  text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 2px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.doctor_description h4 {
+  text-align: center;
+  color: #654b7a;
+}
+.doctor_description h5 {
+  text-align: center;
+  color: #a5a56a;
+}
+
+.doctor_description .doctor_experience {
+
+}
+.doctor_description .doctor_experience ul{
+  padding-top: 15px;
+  padding-left: 15px;
+}
+.doctor_description .doctor_experience ul li{
+  font-size: 16px;
+    padding-left: 25px;
+    color: #666a6d;
+    position: relative;
+    width: 100%;
+    list-style: none;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.doctor_description .doctor_experience ul li::before{
+  position: absolute;
+    top: 2px;
+    left: 0;
+    content: '';
+    color: #654b7a;
+    background-image: url(/icons/check.svg);
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    text-align: left;
+}
+.action_buttons {
+
+}
+.action_buttons .btn {
+  padding: 8px 16px;
+    border: 1px solid #654b7a;
+    background-color: transparent;
+    transition: 0.3s all;
+    border-radius: 9px;
+    margin: 10px 0px;
+}
+.action_buttons .btn a{
+  font-size: 16px;
+    color: #654b7a;
+    text-decoration: none;
+}
+
+.action_buttons .btn:hover {
+  background-color: #654b7a;
+}
+
+.action_buttons .btn:hover  a{
+  color: #ffffff;
+}
+
+
+.info_wrapper {
+  background-color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 2px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.info_wrapper .greetings p {
+  font-size: 18px;
+  color: #000000;
+  line-height: 22px;
+}
+
+
+.info_wrapper .techniques {}
+
+.info_wrapper .techniques ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+.info_wrapper .techniques ul li {
+  display: flex;
+  padding: 10px;
+  border-radius: 100px;
+  background-color: #654b7a;
+  color: #ffffff;
+  width: auto;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+
+.info_wrapper .requests p{
+  font-size: 18px;
+  color: #000000;
+  line-height: 22px;
+}
+
+
+.info_wrapper .requests ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+.info_wrapper .requests ul li{
+  
+  display: flex;
+  padding: 10px;
+  border-radius: 100px;
+  background-color: #654b7a;
+  color: #ffffff;
+  width: auto;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  /* min-width: 100px;
+  max-width: 450px; */
+}
+
+/* .info_wrapper .requests ul li{
+  font-size: 18px;
+    padding-left: 25px;
+    color: #000000;
+    position: relative;
+    width: 100%;
+    list-style: none;
+    text-align: left;
+    margin-bottom: 10px;
+} */
+
+
+.info_wrapper .formats {}
+
+.info_wrapper .formats ul{}
+
+.info_wrapper .formats ul li {
+  font-size: 18px;
+    padding-left: 25px;
+    color: #000000;
+    position: relative;
+    width: 100%;
+    list-style: none;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.info_wrapper .formats ul li::before{
+  position: absolute;
+    top: 2px;
+    left: 0;
+    content: "";
+    color: #a5a56a;
+    background-image: url(/icons/check.svg);
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    text-align: left;
+}
+
+.afterwords p {
+  font-size: 18px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions .btn {
+  padding: 8px 16px;
+    border: 1px solid #654b7a;
+    background-color: #654b7a;
+    transition: 0.3s all;
+    border-radius: 9px;
+    margin: 10px 0px;
+}
+
+.actions .btn a{
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.actions span {
+  font-size: 18px;
+
+}
+
+.actions span a{
+  font-size: 18px;
+  color: #654b7a;
+}
+
+
+.price {
+
+}
+
+.price ul li{
+  font-size: 18px;
+    padding-left: 25px;
+    color: #000000;
+    position: relative;
+    width: 100%;
+    list-style: none;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.price ul li::before {
+  position: absolute;
+    top: 2px;
+    left: 0;
+    content: "";
+    color: #a5a56a;
+    background-image: url(/icons/check.svg);
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    text-align: left;
+}
+
+.diagnostic p {
+  font-size: 18px; 
+}
+
+.diagnostic ul {
+  background: #f9fafb;
+  border-radius: 9px;
+  padding: 15px;
+}
+.diagnostic ul li{
+  font-size: 18px;
+    padding-left: 25px;
+    color: #000000;
+    position: relative;
+    width: 100%;
+    list-style: none;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.diagnostic ul li::before{
+  position: absolute;
+    top: 2px;
+    left: 0;
+    content: '';
+    color: #654b7a;
+    background-image: url(/icons/check.svg);
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    text-align: left;
+}
+
+.phone p {
+  font-size: 18px;
+}
+
+.review p {
+  font-size: 18px;
+}
+
+.info_wrapper p {
+  font-size: 18px;
+}
+.info_wrapper ul li {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 991px) {
+  .action_buttons .btn{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.doctor_description {
+  height: auto;
+}
+.doctor_img {
+    height: auto;
+    width: 100%;
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .doctor_img {
+    height: auto;
+ 
+  }
+  .doctor_description {
+  height: auto;
+}
+.info_wrapper .requests ul li {
+  padding: 16px;
+  border-radius: 20px;
+}
+.info_wrapper .techniques ul li {
+  padding: 16px;
+  border-radius: 20px;
+}
+.info_wrapper .greetings p {
+  font-size: 16px;
+}
+.info_wrapper .requests ul li {
+  font-size: 16px;
+}
+.afterwords p {
+  font-size: 16px;
+}
+.info_wrapper .formats ul li {
+  font-size: 16px;
+}
+.price ul li {
+  font-size: 16px;
+}
+.diagnostic ul li{
+  font-size: 16px;
+}
+/* .diagnostic p {
+  font-size: 16px; 
+}
+.phone p {
+  font-size: 16px;
+}
+.review p {
+  font-size: 16px;
+} */
+.info_wrapper p {
+  font-size: 16px;
+}
+.info_wrapper ul li {
+  font-size: 16px;
+}
+}
+
+@media screen and (max-width: 375px) {
+  .doctor_img {
+    height: 400px;
+ 
+  }
+  .doctor_description {
+  height: auto;
+}
+}

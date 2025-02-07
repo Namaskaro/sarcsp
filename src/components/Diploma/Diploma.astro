@@ -1,0 +1,68 @@
+---
+const {diploma} = Astro.props
+---
+
+
+<a class="diploma_item" data-fancybox="gallery" href={diploma}>
+  <div class="diploma_item__overlay">
+    <img src="/icons/search.svg" alt="">
+  </div>
+  <img src={diploma}  />
+</a>
+
+
+<style>
+.diploma_item {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  margin: 5px;
+  border: 2px solid transparent;
+  border-radius: 9px;
+  overflow: hidden;
+  transition: 0.3s ease-in-out all
+}
+
+.diploma_item:hover {
+  border: 2px solid #654b7a
+}
+
+.diploma_item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}     
+.diploma_item .diploma_item__overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .45);
+    z-index: 99;
+    opacity: 0;
+    transition: all .4s cubic-bezier(.42, 0, .58, 1);
+  }
+  .diploma_item:hover .diploma_item__overlay{
+    opacity: 1;
+  }  
+  
+  .diploma_item .diploma_item__overlay img{
+    width: 40px;
+    height: 40px;
+  }
+  @media screen and (max-width: 480px) {
+  .diploma_item {
+    height: 160px;
+  }
+} 
+@media screen and (max-width: 420px) {
+  .diploma_item {
+    height: 130px;
+  }
+}                                                                                         
+</style>

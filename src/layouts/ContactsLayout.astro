@@ -1,0 +1,279 @@
+---
+interface Props {
+	title: string;
+	description: string;
+}
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'remixicon/fonts/remixicon.css'  
+import Nav from '../components/Nav/Nav.astro';
+
+import PageLoader from '../components/PageLoader.astro';
+import Footer from '../components/Footer/Footer.astro';
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content={description}>
+    <meta name="keywords" content="Психотерапия саратов, психолог саратов, семейный психолог саратов, детский психолог саратов">
+    <meta property = "og:type" content = "website" />
+    <meta property="og:title" content="Центр Современной Психотерапии">
+    <meta property="og:description" content="Мы команда специалистов, оказывающих качественную профессиональную медико-психологическую помощь взрослым и детям, даже в самых сложных случаях, где не помогло предыдущее лечение. Наша команда работает в тесном бригадном подходе, что позволяет общими усилиями приходить к отличному результату в лечении.">
+    <meta property="og:image" content="https://sarcsp.ru/themes/CSP/assets/img/Header.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sarcsp.ru">
+            
+    <meta name="yandex-verification" content="7d74a53fed42902c" />
+    <meta name="google-site-verification" content="_NOnp6aQIe5EEhuf37r084ra1FcqClNoAWJzLRKylvw">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="https://sarcsp.ru/">
+    <title>{title}</title>
+    <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?apikey=2104b3cd-32f3-4b09-aa66-c924fe984acf&lang=ru_RU;scroll=false"></script>
+    <!-- <link rel="apple-touch-icon" sizes="180x180"  href="themes/CSP/assets/img/apple-touch-icon.png" type="image/x-icon">
+    <link rel="shortcut icon" sizes="32x32"  href="https://sarcsp.ru/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" sizes="32x32"  href="themes/CSP/assets/img/favicon-32x32.png" type="image/png">
+    <link rel="shortcut icon" sizes="16x16"  href="themes/CSP/assets/img/favicon-16x16.png" type="image/png">
+    <link rel="shortcut icon" sizes="192x192"  href="themes/CSP/assets/img/android-chrome-192x192.png" type="image/png">
+    <link rel="manifest" href="themes/CSP/assets/img/site.webmanifest"> -->
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		
+		<Nav/>
+		
+			<slot />
+	
+		<Footer/>
+      <script type="text/javascript">
+        function mapLoad() {
+        if (ymaps) {
+        
+            function init() {
+                var i;
+                var place;
+                var pointer = [51.524939, 46.019506];
+                var studioMap = new ymaps.Map('map', {
+                    center: [51.524939, 46.019506],
+                    zoom: 16,
+                });
+        place = new ymaps.Placemark(pointer);
+        studioMap.geoObjects.add(place);
+            }
+            ymaps.ready(init);
+        }
+    }
+    mapLoad()
+    const showMenu = (toggleId, navId) =>{
+   const toggle = document.getElementById(toggleId),
+         nav = document.getElementById(navId)
+
+   toggle?.addEventListener('click', () =>{
+       // Add show-menu class to nav menu
+       nav?.classList.toggle('show-menu')
+
+       // Add show-icon to show and hide the menu icon
+       toggle.classList.toggle('show-icon')
+   })
+}
+
+showMenu('nav-toggle','nav-menu')
+const e = Array.from(document.querySelectorAll('[data-toggle="collapse"]'));
+            window.addEventListener("click", t => {
+                const i = t.target;
+                if (e.includes(i)) {
+                    const e = i.getAttribute("data-target");
+                    s(e, "toggle")
+                }                                                                                                                                                               
+            }, !1);
+            const t = {
+                    toggle: "toggle",                                                                                           
+                    show: "add",
+                    hide: "remove"
+                },
+                s = (e, s) => {
+                    Array.from(document.querySelectorAll(e)).forEach(e => {
+                        e.classList[t[s]]("show")
+                    })
+                };
+    </script>
+	
+		<!-- BEGIN JIVOSITE CODE -->
+<script>
+  //@ts-nocheck
+	(function(){ document.jivositeloaded=0;var widget_id = 'XBEJDWnLBq';var d=document;var w=window;function l(){var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}
+	function zy(){
+		 
+			if(w.detachEvent){
+					w.detachEvent('onscroll',zy);
+					w.detachEvent('onmousemove',zy);
+					w.detachEvent('ontouchmove',zy);
+					w.detachEvent('onresize',zy);
+			}else {
+					w.removeEventListener("scroll", zy, false);
+					w.removeEventListener("mousemove", zy, false);
+					w.removeEventListener("touchmove", zy, false);
+					w.removeEventListener("resize", zy, false);
+			}
+		 
+			if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}
+			
+			var cookie_date = new Date ( );
+			cookie_date.setTime ( cookie_date.getTime()+60*60*28*1000); 
+			d.cookie = "JivoSiteLoaded=1;path=/;expires=" + cookie_date.toGMTString();
+	}
+	if (d.cookie.search ( 'JivoSiteLoaded' )<0){
+			if(w.attachEvent){
+					w.attachEvent('onscroll',zy);
+					w.attachEvent('onmousemove',zy);
+					w.attachEvent('ontouchmove',zy);
+					w.attachEvent('onresize',zy);
+			}else {
+					w.addEventListener("scroll", zy, {capture: false, passive: true});
+					w.addEventListener("mousemove", zy, {capture: false, passive: true});
+					w.addEventListener("touchmove", zy, {capture: false, passive: true});
+					w.addEventListener("resize", zy, {capture: false, passive: true});
+			}
+	}else {zy();}
+	})();</script>
+	<!-- {/literal} END JIVOSITE CODE -->
+
+	</body>
+</html>
+<style is:global>
+	:root {
+		--primary: 
+	}
+  .title {
+		text-align: center;
+	}
+	.title h1,h2 {
+		font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #654b7a;
+    padding: 45px 0;
+		font-family: "Lato", sans-serif;
+	}
+	.title h1::after,h2::after {
+		display: block;
+    margin: 10px auto 10px auto;
+    height: 2px;
+    width: 35px;
+    content: '';
+    background: #a5a56a;
+	}
+
+  @media screen and (max-width: 768px) {
+		.title h1,h2 {
+		font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #654b7a;
+    padding: 30px 0;
+		font-family: "Lato", sans-serif;
+	}
+}
+	@media screen and (max-width: 576px) {
+		.title h1,h2 {
+		font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #654b7a;
+    padding: 20px 0;
+		font-family: "Lato", sans-serif;
+	}
+	}
+	@font-face {
+  font-family: 'PT Sans';
+  src: url('/fonts/PTSans-Regular') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PT Sans';
+  src: url('/fonts/PTSans-Bold') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Light') format('ttf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Regular') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Bold') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+	html {
+		background: #ffffff;
+		/* width: 100vw;
+		height: 100vh; */
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body {
+		/* position: relative;
+		height: 100vh; */
+		width: 100%;
+		font-family: "PT Sans", sans-serif;
+	}
+	h1,h2,h3,h4,h5 {
+		font-family: "Lato", sans-serif;
+	}
+  .breadcrumbs {
+  /* padding: 15px 20px 15px 20px; */
+}
+
+.breadcrumbs ul {
+  list-style: none;
+ 
+  border-radius: 10px;
+  margin-bottom: 0;
+  padding: 10px;
+}
+.breadcrumbs ul li{
+  display: inline;                                                                                                                                                  
+}
+.breadcrumbs ul li + li::before{
+  /* padding: 10px; */
+  color:#7D8597;
+	font-weight: 400;
+  content: '/'; 
+  font-size: 1rem;                                                                                                                                              
+}
+.breadcrumbs ul li a{
+  font-size: 15px;
+  color: #666a6d;
+  text-decoration: none;
+  margin: 0px 10px;
+}
+.breadcrumbs ul li a.active{
+  color: #a5a56a;
+}
+.breadcrumbs ul li a:hover{
+  
+  color: #a5a56a;
+}
+</style>

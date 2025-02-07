@@ -1,0 +1,142 @@
+---
+import { Image } from 'astro:assets';
+const {id,name,type,imgSrc, slug} = Astro.props
+---
+
+
+<div class="col-6   col-md-4 col-xl-4">
+  <div class="doctor_card">
+    <div class="doctor_card_img">
+      <a href={`/doctors/${slug}`}>
+      <Image src={imgSrc} alt="" width="350" height="400">
+      </a>
+    </div>
+    <div class="doctor_card_description">
+      <h4>{name}</h4>
+      <span>{type}</span>
+      <a href={`/doctors/${slug}`} class="btn btn_primary">Подробнее
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24px" height="24px">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+        </svg>
+        
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<style>
+.doctor_card {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
+  box-shadow: -6px -6px 8px rgba(255, 255, 255, 0.9), 5px 5px 8px rgba(0, 0, 0, 0.07);
+  border-radius: 9px;
+  padding: 10px;
+}
+
+.doctor_card_img {
+  border-radius: 9px;
+  height: 470px;
+  width: 100%;
+  overflow: hidden;
+  
+}
+.doctor_card_img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.doctor_card_description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 10px;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+.doctor_card_description h4 {
+  font-size: 15px;
+  /* text-transform: uppercase; */
+  color: #000000;
+  margin-top:  10px;
+  flex: 1 25px;
+}
+
+.doctor_card_description span {
+  display: flex;
+  flex: 1 50px;
+  color: #666a6d;
+  font-size: 12px;
+}
+.doctor_card_description a {
+  display: flex;
+  text-decoration: none;
+  flex: 1 30px;
+
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+    border: 1px solid #654b7a;
+    background-color: #654b7a;
+    transition: 0.3s all;
+    border-radius: 9px;
+    margin-top: 10px;
+    color: #ffffff;
+    transition: 0.3s ease all;
+}
+.btn svg {
+  stroke: #ffffff;
+  margin-left: 10px;
+}
+.btn:hover {
+  color: #ffffff;
+  background: #654b7a;
+}
+
+.btn:hover svg{
+ stroke: #ffffff;
+ margin-left: 15px;
+}
+
+@media screen and (max-width: 991px) {
+  .doctor_card_img {
+  height: 300px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .doctor_card_img {
+  height: 350px;
+}
+
+}
+
+@media screen and (max-width: 480px) {
+  .doctor_card_img {
+  height: 285px;
+}
+.btn {
+  font-size: 13px;
+  padding: 5px 10px;
+}
+.doctor_card_description h4 {
+  font-size: 12px;
+}
+}
+
+@media screen and (max-width: 375px) {
+  .doctor_card_img {
+  height: 200px;
+}
+.btn {
+  font-size: 13px;
+}
+}
+</style>
