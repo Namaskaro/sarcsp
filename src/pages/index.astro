@@ -39,7 +39,20 @@ const doctors = [
       </div>
     </div>
   </section> -->
-  <Banner  client:only/>
+  <Banner  client:only="react"/>
+  <section class="reference">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="reference_wrapper">
+            <span>Заключение от психолога при получении инвалидности</span>
+            <GlowButton text="Подробнее" to="/napravleniya/spravka"/>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="about">
     <div class="container">
       <div class="row">
@@ -51,7 +64,7 @@ const doctors = [
         <div class="col-12">
           <div class="about_description">
             <p>Рады Вас приветствовать на нашем сайте "Центра современной психотерапии и соматической патологии доктора Евстафьевой"</p>
-            <p>Центр был основан доктором Евстафьевой Д,А. в 2019 году в городе Саратове.</p>
+            <p>Центр был основан доктором Евстафьевой Д,А. и клиническим психологом Керимовой Лилией Азадовной в 2019 году в городе Саратове.</p>
             <p>
               Наш центр осуществляет диагностику, лечение и профилактику широкого круга заболеваний по различным психическим направлениям.
             </p>
@@ -265,7 +278,22 @@ const doctors = [
 
 
 <style>
+  .reference {
+    background-color: #654b7a;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .reference_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
 
+  .reference_wrapper span{
+    color: #ffffff;
+    font-size: 20px;
+  }
   .note {
     background-color: #654b7a;
     padding-top: 30px;
@@ -643,6 +671,10 @@ color: #000000;
     border-radius: 24px;
     overflow: hidden;
   }
+  .reference_wrapper span{
+    color: #ffffff;
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -651,6 +683,22 @@ color: #000000;
     height:  500px;
     border-radius: 24px;
     overflow: hidden;
+  }
+
+  .reference {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .reference_wrapper {
+    flex-direction: column;
+  }
+
+  .reference_wrapper span{
+    color: #ffffff;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 15px;
   }
 
   .founder .founder_intro_text p {

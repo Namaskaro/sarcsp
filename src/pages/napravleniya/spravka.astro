@@ -1,0 +1,156 @@
+---
+import DCard from "@/components/DCard/DCard.astro"
+import MainLayout from "@/layouts/MainLayout.astro"
+
+
+const doctors = [{id: 1, slug:'daria-evstafieva', name: 'Евстафьева Дарья Алексеевна', type: 'Главный врач, врач-психиатр, детский психиатр', img: '/img/team/evstafieva/Daria_Evstafieva.jpg'}]
+---
+
+
+
+
+
+
+
+<MainLayout title="Получить заключение от психолога при получении инвалидности в Саратове" description="Получить заключение от психолога при получении инвалидности в Саратове">
+  <section class="reference">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="breadcrumbs">
+            <ul>
+              <li><a href="/">Главная</a></li>
+              <li><a href="#">Направления</a></li>
+              <li><a class="active" href={`/spravka`}>Заключение от психолога</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="title">
+            <h1>Заключение от психолога при получении инвалидности</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row content_wrapper">
+        
+          <div class="col-12 col-lg-6">
+            <div class="reference_img">
+              <img src="/img/directions/reference.webp" alt="">
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="reference_text">
+              <p>Получение инвалидности — это сложный и многоэтапный процесс, требующий не только медицинского, но и психологического обоснования. Заключение психолога играет ключевую роль в установлении степени ограничений, вызванных психическими или психосоматическими расстройствами, и помогает комиссии принять объективное решение.  </p>
+              <p> <strong>Почему важно заключение психолога? </strong> <br>
+                Психическое здоровье напрямую влияет на качество жизни, способность к самообслуживанию, трудовой деятельности и социальной адаптации. Многие заболевания, такие как депрессия, тревожные расстройства, посттравматическое стрессовое расстройство (ПТСР), шизофрения или последствия черепно-мозговых травм, могут значительно ограничивать возможности человека. В таких случаях психолог проводит углубленную диагностику, оценивая:  </p>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="reference_text">
+              <ul>
+                <li><strong>Когнитивные функции</strong>(память, внимание, мышление);</li>
+                <li><strong>Эмоциональное состояние</strong>(уровень тревоги, наличие суицидальных мыслей);  </li>
+                <li><strong>Способность к коммуникации</strong> и адаптации в обществе;  </li>
+                <li><strong>Степень зависимости </strong>от посторонней помощи.</li>
+              </ul>
+              <p>Эти данные становятся основой для заключения, которое подтверждает необходимость присвоения группы инвалидности.  </p>
+              <p><strong>Как проходит психологическое обследование?  </strong></p>
+              <ul>
+                <li><strong>Беседа и сбор анамнеза**</strong> — психолог изучает историю болезни, жалобы пациента, влияние заболевания на повседневную жизнь.  </li>
+                <li><strong>Тестирование</strong> — используются стандартизированные методики (например, MMPI, тесты на интеллект, проективные методы) для объективной оценки состояния.  </li>
+                <li><strong>Наблюдение</strong> — анализируется поведение, эмоциональные реакции, способность концентрироваться.  </li>
+                <li><strong>Составление заключения</strong>документ включает диагноз, описание ограничений жизнедеятельности и рекомендации по реабилитации.  </li>
+              </ul>
+              <p>Заключение психолога — это не просто формальность, а важный аргумент для комиссии. Оно помогает:  </p>
+              <ul>
+                <li><strong>Подтвердить стойкость расстройств</strong> — доказать, что проблемы носят долгосрочный или хронический характер;  </li>
+                <li><strong>Определить индивидуальную программу реабилитации</strong> — например, необходимость психотерапии или социальной поддержки;  </li>
+                <li><strong>Защитить права пациента</strong> — избежать субъективной оценки и обеспечить справедливое решение.  </li>
+              </ul>
+              <p><strong>Важно знать!  </strong></p>
+              <p>Психологическое заключение должно быть составлено дипломированным специалистом, имеющим опыт работы с инвалидностью. Документ заверяется личной подписью и печатью учреждения. Однако помните: окончательное решение принимает МСЭ на основе комплексного анализа медицинских, социальных и психологических факторов.  </p>
+              <p><strong>Если вы или ваш близкий столкнулись с необходимостью оформления инвалидности — доверьтесь профессионалам.  </strong></p>
+              <p>Психологическая оценка не только облегчит процедуру, но и станет первым шагом к получению необходимой помощи и улучшению качества жизни.</p>
+            </div>
+          </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-12">
+          <div class="title">
+            <h2>Специалисты</h2>
+          </div>
+        </div>
+        {doctors.map(doctor => (
+          <DCard name={doctor.name} type={doctor.type} imgSrc={doctor.img} id={doctor.id} slug={doctor.slug}/>
+        ))}
+      </div> -->
+    </div>
+  </section>
+</MainLayout>
+
+
+
+<style>
+  .reference {
+    margin-top: 94px;
+  }
+  .reference .content_wrapper {
+    padding: 20px 15px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 2px 4px 8px #223c5033;
+    margin-bottom: 30px;
+  }
+
+  .reference .content_wrapper .reference_img{ 
+    border-radius: 9px;
+    overflow: hidden;
+  }
+
+  .reference .content_wrapper .reference_img img{ 
+    width: 100%;
+    height: auto;
+    border-radius: 9px;
+  }
+
+  .reference .content_wrapper .reference_text{
+    
+  }
+
+  .reference .content_wrapper .reference_text ul{
+    padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .reference .content_wrapper .reference_text ul li{
+    font-size: 16px;
+  padding-left: 25px;
+  color: #000000;
+  position: relative;
+  width: 100%;
+  list-style: none;
+  text-align: left;
+  margin-bottom: 10px;
+  }
+
+  .reference .content_wrapper .reference_text ul li::before{
+    position: absolute;
+  top: 2px;
+  left: 0;
+  content: '';
+  color: #a5a56a;
+  background-image: url(/icons/check.svg);
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  text-align: left;
+  }
+
+  .reference .content_wrapper .reference_text p{
+    font-size: 16px;
+    color: #666a6d;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+</style>
